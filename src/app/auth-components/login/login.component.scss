@@ -1,11 +1,16 @@
+// [nz-form]{
+//     max-width: 600px;
+// }
+
 nz-form-control{
     min-width: 280px;
 }
 
 .parent{
     width: 100%;
-    height: 200vh;
+    height: 91vh;
     position: relative;
+    // background-color: #a9248e;
 }
 
 .child{
@@ -14,21 +19,28 @@ nz-form-control{
     width: 380px;
     background-color: #ffffff;
 
-    top: 22%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
+.login-form-forgot{
+    float: right;
+}
+
+.login-form-button{
+    width: 100%;
+}
+
 button{
     // background-color: #180579;
-    width: 100%;
     background-color: #e88f09;
     color:#ffffff;
     border:none;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 button:hover{
