@@ -3,6 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { AuthService } from '../../auth-services/auth-service/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from '../../auth-services/storage-service/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent {
   isSpinning: boolean;
 
   constructor(private service: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(){
@@ -37,6 +39,12 @@ export class LoginComponent {
         console.log(user);
         StorageService.saveToken(res.jwt);
         StorageService.saveUser(user);
+
+        if(StorageService.isAdminLoggedIn()){
+          this.router.navigateByUrl("admin/dashboard");
+        } else if(StorageService.isUserLoggedIn()){
+          this.router.navigateByUrl("user/dashboard");
+        } 
 
       } else {
         console.log("Wrong credentials")
