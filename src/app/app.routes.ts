@@ -8,6 +8,6 @@ export const routes: Routes = [
     { path:"", component:MainPageComponent },
     { path:"signup", component:SignupComponent },
     { path:"login", component:LoginComponent },
-    { path:"admin", loadChildren: () => import("./modules/admin/admin.module").then(m => m.AdminModule)  },
-    { path:"user", loadChildren: () => import("./modules/user/user.module").then(m => m.UserModule)  },
+    { path:"admin", loadChildren: () => import("./modules/admin/admin.module").then(m => m.AdminModule)},
+    { path:"user", loadChildren: () => import("./modules/user/user.module").then(m => m.UserModule)},
 ];

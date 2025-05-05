@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-const TOKEN = 'token'
-const USER = 'user'
+const TOKEN = 'token';
+const USER = 'user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,13 @@ export class StorageService {
     window.localStorage.setItem(USER, JSON.stringify(user));
   }
 
-  static getToken():string{
-    return localStorage.getItem(TOKEN);
+  // static getToken():string{
+  //   return localStorage.getItem(TOKEN);
+  // }
+
+
+  static getToken(): string | null {
+    return typeof window !== 'undefined' ? window.localStorage.getItem(TOKEN) : null;
   }
 
   static getUser():any{
@@ -50,6 +55,11 @@ export class StorageService {
     }
     const role:string = this.getRole();
     return role == "USER";
+  }
+
+  static signOut(): void{
+    window.localStorage.removeItem(USER);
+    window.localStorage.removeItem(TOKEN);
   }
 
 
