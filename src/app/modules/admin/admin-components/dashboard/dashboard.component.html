@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<form nz-form [formGroup]="validateForm" (submit)="submitForm()">
+    <input nz-input placeholder="Enter keywork to search" ngSize="large" style="width: 20%;" formControlName="title" />
+    <button nz-button [nzSize]="size" style="margin-left: 15px;" [disabled]="validateForm.invalid">Search</button>
+</form>
+
+<div class="container">
+    <div style="padding-top:10px;"></div>
+    <div class="child" *ngFor="let category of categories">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <img class="profile" [src]="category.processedImg" alt="profile">
+            </div>
+            <div nz-col nzSpan="16">
+                <h2><b>{{category.title}}</b></h2>
+                <hr>
+                <h5>Description: <b>{{category.description}}</b></h5>
+                <hr>
+                <div style="float:right;">
+                    <button nz-size="small" nz-button routerLink="/admin/{{category.id}}/view_products">View products</button>
+                    <button style="margin-left: 10px;" nz-size="small" nz-button routerLink="/admin/{{category.id}}/product">Add product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
