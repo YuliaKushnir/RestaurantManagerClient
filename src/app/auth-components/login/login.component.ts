@@ -37,7 +37,7 @@ export class LoginComponent {
 
       const user = {
         id:res.userId,
-        role:res.userRole
+        role:res.role
       }
 
       StorageService.saveToken(res.jwt);
