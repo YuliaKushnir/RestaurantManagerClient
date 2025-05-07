@@ -42,12 +42,20 @@ export class AdminService {
     });
   }
 
+  getProductsByCategoryAndTitle(categoryId:number, title:string): Observable<any>{
+    return this.http.get(BASIC_URL + `api/admin/${categoryId}/product/${title}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader():HttpHeaders{
     let authHeaders:HttpHeaders = new HttpHeaders();
     return authHeaders.set(
       "Authorization", "Bearer " + StorageService.getToken()
     );
   }
+
+
 
 }
 

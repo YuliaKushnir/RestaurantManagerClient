@@ -31,7 +31,6 @@ export class DashboardComponent {
     this.isSpinning = true;
     this.categories = [];
     this.service.getAllCategoriesByTitle(this.validateForm.get(['title'])!.value).subscribe((res) => {
-      console.log(res);
       res.forEach(el => {
         el.processedImg = 'data:image/jpeg;base64,' + el.returnedImg;
         this.categories.push(el);
