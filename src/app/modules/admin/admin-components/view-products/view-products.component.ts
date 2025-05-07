@@ -3,6 +3,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from '../../admin-services/admin.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-view-products',
@@ -19,7 +20,8 @@ export class ViewProductsComponent {
 
   constructor(private service: AdminService,
     private activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private message: NzMessageService,
   ){
     this.categoryId = this.activatedRoute.snapshot.params['categoryId'];
 
@@ -51,6 +53,17 @@ export class ViewProductsComponent {
         el.processedImg = 'data:image/jpeg;base64,' + el.returnedImg;
         this.products.push(el);
       });
+    });
+  }
+
+  deleteProduct(productId:number){
+    this.service.deleteProduct(productId).subscribe((res) => {
+      if(res == null){
+        this.getProductsByCategory();
+        this.message.success("Product deleted successfully", {nzDuration: 5000});
+      } else {
+        this.message.error("Product was not deleted", {nzDuration: 5000});
+      }
     });
   }
 

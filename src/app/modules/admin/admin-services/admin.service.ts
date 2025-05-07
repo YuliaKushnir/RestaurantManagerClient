@@ -48,6 +48,12 @@ export class AdminService {
     });
   }
 
+  deleteProduct(productId:number): Observable<any>{
+    return this.http.delete(BASIC_URL + `api/admin/product/${productId}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   createAuthorizationHeader():HttpHeaders{
     let authHeaders:HttpHeaders = new HttpHeaders();
     return authHeaders.set(
