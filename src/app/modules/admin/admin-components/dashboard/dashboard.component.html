@@ -1,6 +1,6 @@
-<form nz-form [formGroup]="validateForm" (submit)="submitForm()">
-    <input nz-input placeholder="Enter keywork to search" ngSize="large" style="width: 20%;" formControlName="title" />
-    <button nz-button [nzSize]="size" style="margin-left: 15px;" [disabled]="validateForm.invalid">Search</button>
+<form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center;" (submit)="submitForm()">
+    <input nz-input placeholder="Enter keyword to search" ngSize="large" style="width: 20%;" formControlName="title" />
+    <button nz-button [nzSize]="'large'" style="margin-left: 15px;" [disabled]="validateForm.invalid">Search</button>
 </form>
 
 <div class="container">
