@@ -1,0 +1,24 @@
+<div class="container">
+    <div style="padding-top:10px;"></div>
+    <div class="child" *ngFor="let product of products">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <img class="profile" [src]="product.processedImg" alt="profile">
+            </div>
+            <div nz-col nzSpan="16">
+                <h2><b>{{product.name}}</b></h2>
+                <hr>
+                <h5>Price: <b>{{product.price}}</b>
+                    Description: <b>{{product.description}}</b>
+                    Category: <b>{{product.categoryName}}</b>
+                </h5>
+                <hr>
+                
+                <!-- <div style="float:right;">
+                    <button nz-size="small" nz-button routerLink="/admin/edit-product/{{product.id}}">Update</button>
+                    <button style="margin-left: 10px;" nz-size="small" nz-button (click)="deleteProduct(product.id) nzDanger" >Delete</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
