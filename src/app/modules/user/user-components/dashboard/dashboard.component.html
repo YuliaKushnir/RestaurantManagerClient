@@ -1,3 +1,8 @@
+<form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center;" (submit)="submitForm()">
+    <input nz-input placeholder="Search category" ngSize="large" style="width: 20%;" formControlName="title" />
+    <button nz-button  style="margin-left: 15px;" [disabled]="validateForm.invalid">Search</button>
+</form>
+
 <div class="container">
     <div style="padding-top:10px;"></div>
     <div class="child" *ngFor="let category of categories">
@@ -11,7 +16,7 @@
                 <h5>Description: <b>{{category.description}}</b></h5>
                 <hr>
                 <div style="float:right;">
-                    <button nz-size="small" nz-button routerLink="/admin/{{category.id}}/products">View products</button>
+                    <button nz-size="small" nz-button routerLink="/user/{{category.id}}/products">View products</button>
                 </div>
             </div>
         </div>
