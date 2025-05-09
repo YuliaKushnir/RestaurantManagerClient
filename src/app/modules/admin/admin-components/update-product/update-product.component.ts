@@ -15,7 +15,6 @@ export class UpdateProductComponent {
 
   productId: number;
   validateForm!: FormGroup;
-  // selectedFile:File | null;
   imagePreview:string | ArrayBuffer | null = null; 
   isSpinning = false;
   imgChanged = false;

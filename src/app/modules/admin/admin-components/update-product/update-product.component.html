@@ -1,20 +1,14 @@
-<div style="margin-top: 50px;">
+<div>
     <nz-spin [nzSpinning]="isSpinning" ngSize="'large'" nzTip="Loading...">
         <div class="parent">
             <div class="child">
                 <div nz-row class="imgDiv">
-                    <h2 style="margin-left: 200px;">Uopdate product</h2>
+                    <h2>Update product</h2>
                 </div>
         
                 <form nz-form [formGroup]="validateForm">
                     <div nz-row>
                         <div class="file-upload-container">
-                            <label class="file-upload_label" >
-                                <span style="margin-left: 100px;">Select a file</span>
-                                <input type="file" nz-button nzType="primary" id="upload_profile_image"
-                                    accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)">
-                            </label>
-
                             <div *ngIf="imagePreview" class="image-preview">
                                 <div class="circle-image">
                                     <img class="profile" [src]="imagePreview" alt="existing image" />
@@ -27,7 +21,11 @@
                                 </div>
                             </div>
 
-
+                            <label class="file-upload_label" >
+                                <!-- <span style="margin-left: 100px;">Select a file</span> -->
+                                <input type="file" nz-button nzType="primary" id="upload_profile_image"
+                                    accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)">
+                            </label>
                         </div>
 
 

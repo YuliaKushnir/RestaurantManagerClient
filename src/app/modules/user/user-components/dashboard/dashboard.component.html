@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div style="padding-top:10px;"></div>
+    <div class="child" *ngFor="let category of categories">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <img class="profile" [src]="category.processedImg" alt="profile">
+            </div>
+            <div nz-col nzSpan="16">
+                <h2><b>{{category.title}}</b></h2>
+                <hr>
+                <h5>Description: <b>{{category.description}}</b></h5>
+                <hr>
+                <div style="float:right;">
+                    <button nz-size="small" nz-button routerLink="/admin/{{category.id}}/products">View products</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
