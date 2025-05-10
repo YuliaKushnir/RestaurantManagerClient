@@ -34,17 +34,17 @@ export class ViewProductsByCategoryComponent {
     this.getProductsByCategory();
   }
 
-  // submitForm(){
-  //   this.isSpinning = true;
-  //   this.products = [];
-  //   this.service.getProductsByCategoryAndTitle(this.categoryId, this.validateForm.get(['title'])!.value).subscribe((res) => {
-  //     res.forEach(el => {
-  //       el.processedImg = 'data:image/jpeg;base64,' + el.returnedImg;
-  //       this.products.push(el);
-  //       this.isSpinning = false;
-  //     });
-  //   });
-  // }
+  submitForm(){
+    this.isSpinning = true;
+    this.products = [];
+    this.service.getProductsByCategoryAndTitle(this.categoryId, this.validateForm.get(['title'])!.value).subscribe((res) => {
+      res.forEach(el => {
+        el.processedImg = 'data:image/jpeg;base64,' + el.returnedImg;
+        this.products.push(el);
+        this.isSpinning = false;
+      });
+    });
+  }
 
   getProductsByCategory(){
     this.products = [];
