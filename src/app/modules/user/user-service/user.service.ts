@@ -29,11 +29,30 @@ export class UserService {
     });
   }
 
-  getProductsByCategoryAndTitle(categoryId:number, title:string): Observable<any>{
-      return this.http.get(BASIC_URL + `api/customer/${categoryId}/product/${title}`, {
-        headers: this.createAuthorizationHeader()
-      });
-    }
+  getProductsByCategoryAndTitle(
+    categoryId: number,
+    title: string
+  ): Observable<any> {
+    return this.http.get(
+      BASIC_URL + `api/customer/${categoryId}/product/${title}`,
+      {
+        headers: this.createAuthorizationHeader(),
+      }
+    );
+  }
+
+  postReservation(
+    reservationDto: any,
+  ): Observable<any> {
+    reservationDto.userId = StorageService.getUserId()
+    return this.http.post(
+      BASIC_URL + `api/customer/reservation`, reservationDto,
+      {
+        headers: this.createAuthorizationHeader(),
+      }
+    );
+  }
+
 
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
