@@ -1,0 +1,29 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Loading...">
+    <nz-table #basicTable [nzData]="reservations" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+                <th>Table type</th>
+                <th>Description</th>
+                <th>Reservation time</th>
+                <th>Reservation date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of basicTable.data">
+                <td><strong>{{reservation.tableType}}</strong></td>
+                <td><strong>{{reservation.description}}</strong></td>
+                <td><strong>{{reservation.dateTime | date:'h:mm a'}}</strong></td>
+                <td><strong>{{reservation.dateTime | date}}</strong></td>
+                <td>
+                    <strong [ngStyle]="{'color': reservation.reservationStatus === 'APPROVED' ? 'green' :
+                        reservation.reservationStatus === 'DISAPPROVED' ? 'blue' : 'red'
+                    }">
+                        
+                        {{reservation.reservationStatus}}
+                    </strong>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin>
