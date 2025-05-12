@@ -23,10 +23,7 @@ export class GetAllReservationsComponent {
 
   getReservationsByUser(){
     this.service.getReservationsByUser().subscribe((res)=>{
-      console.log(res);
-
       this.reservations = res;
-      console.log("RESERVATION ", this.reservations);
     })
   }
 
