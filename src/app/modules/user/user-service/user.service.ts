@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { StorageService } from '../../../auth-services/storage-service/storage.service';
 import { Observable } from 'rxjs';
 
-const BASIC_URL = ['http://localhost:8080/'];
+// const BASIC_URL = ['http://localhost:8080/'];
+const BASIC_URL = "https://restaurantmanager-51hv.onrender.com/";
+
 
 @Injectable({
   providedIn: 'root',
