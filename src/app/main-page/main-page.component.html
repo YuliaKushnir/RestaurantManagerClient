@@ -1,1 +1,17 @@
-<p>main-page works!</p>
+<div class="container">
+    <div class="text">
+        <h1>A warm welcome to Browns Brasserie & Bar.</h1>
+        <p>It’s been over 50 years since we first opened our doors in the seaside town of Brighton. Our classic seasonal food and signature cocktails can now be enjoyed, with all day dining, all over the country, in locations that are quintessentially British and rich in heritage.</p>
+        <p>We’re open all day from breakfast through to dinner, with a menu of classic British comforts and fresh seasonal creations, market fish delivered daily, fabulous afternoon teas, and traditional roasts on Sundays. We also proudly offer bespoke Gluten Free breakfast, A La Carte and Afternoon Tea menus, all accredited by Coeliac UK.</p>
+    </div>
+    <div class="booking-button">
+        <a nz-button nzType="link" [routerLink]="isLoggedIn() ? '/user/reservation' : '/login'" routerLinkActive="active">
+            Book now!
+        </a>
+    </div>
+    <div class="events">
+        <img class="event" src="/imgs/bro-ln25-07-graduation-home-sb.jpg" alt="graduating">
+        <img class="event" src="/imgs/bro-ln25-09-lunch-home-sb-pb2.jpg" alt="lunch">
+        <img class="event" src="/imgs/bro-2024-privatedining-home-privatedining-sb.jpg" alt="private">
+    </div>
+</div>
