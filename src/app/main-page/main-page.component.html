@@ -5,8 +5,11 @@
         <p>We’re open all day from breakfast through to dinner, with a menu of classic British comforts and fresh seasonal creations, market fish delivered daily, fabulous afternoon teas, and traditional roasts on Sundays. We also proudly offer bespoke Gluten Free breakfast, A La Carte and Afternoon Tea menus, all accredited by Coeliac UK.</p>
     </div>
     <div class="booking-button">
-        <a nz-button nzType="link" [routerLink]="isLoggedIn() ? '/user/reservation' : '/login'" routerLinkActive="active">
-            Book now!
+        <a nz-button nzType="link" [routerLink]="isLoggedIn() ? '/user/reservation' : '/dashboard'" routerLinkActive="active">
+            Book now
+        </a>
+        <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">
+            Show menu
         </a>
     </div>
     <div class="events">

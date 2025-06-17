@@ -36,7 +36,11 @@
 }
 
 a{
-    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 15px;
+    height: 48px;
     width: 210px;
     background-color: #e88f09;
     color: #ffffff;
