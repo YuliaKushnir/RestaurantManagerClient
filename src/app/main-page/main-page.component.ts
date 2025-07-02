@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { StorageService } from '../auth-services/storage-service/storage.service';
+import { UserService } from '../modules/user/user-service/user.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,9 +11,17 @@ import { StorageService } from '../auth-services/storage-service/storage.service
 })
 export class MainPageComponent {
 
-  constructor(){}
+  constructor(private service: UserService){}
+
+  ngOnInit(): void {
+    this.pushesDb();
+  }
 
   isLoggedIn(): boolean {
     return StorageService.isUserLoggedIn();
+  }
+
+  pushesDb(): void{
+    this.service.getAllCategories();
   }
 }
